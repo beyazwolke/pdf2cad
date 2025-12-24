@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>PDF2CAD</title>
+  <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+  <h1>PDF2CAD (Portable)</h1>
+
+  <div class="box">
+    <button id="btnPick">PDF auswählen</button>
+    <span id="pdfPath" class="muted">Keine Datei gewählt.</span>
+  </div>
+
+  <div class="box row">
+    <label>Layer Policy
+      <select id="layerPolicy">
+        <option value="width" selected>width</option>
+        <option value="color+width">color+width</option>
+        <option value="color">color</option>
+        <option value="single">single</option>
+      </select>
+    </label>
+
+    <label>Snap(px)
+      <input id="snap" type="number" step="0.05" value="0.25">
+    </label>
+
+    <label>AngleTol(°)
+      <input id="ang" type="number" step="0.5" value="2">
+    </label>
+
+    <label>MinLen(px)
+      <input id="minlen" type="number" step="0.01" value="0.05">
+    </label>
+
+    <button id="btnConvert" disabled>Konvertieren</button>
+    <button id="btnSave" disabled>DXF speichern</button>
+  </div>
+
+  <div class="box">
+    <div class="muted">Status</div>
+    <div id="status">Bereit.</div>
+  </div>
+
+  <pre id="meta" class="box"></pre>
+
+  <script type="module" src="./renderer.js"></script>
+</body>
+</html>
